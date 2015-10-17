@@ -7,6 +7,7 @@ j360-jdk
 
 ##内容##
 - 容器
+ - 博客：http://my.oschina.net/smartsales/blog/518232
 ```
 -Collection
 List
@@ -25,6 +26,8 @@ Set
  - 继承Thread
  - 实现Runnable接口
  - 使用ExecutorService、Callable、Future实现有返回结果的多线程
+ 
+ - 博客：
 
 
 - 一般语法common
