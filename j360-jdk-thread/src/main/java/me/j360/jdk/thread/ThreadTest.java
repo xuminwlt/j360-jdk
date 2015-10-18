@@ -10,6 +10,13 @@ package me.j360.jdk.thread;
 public class ThreadTest {
 
     public static void main(String[] args){
+        MyThread myThread = new MyThread();
+        myThread.start();
+
+        MyThreadRun myThreadRun = new MyThreadRun();
+        Thread thread = new Thread(myThreadRun);
+        thread.start();
+
 
 
     }

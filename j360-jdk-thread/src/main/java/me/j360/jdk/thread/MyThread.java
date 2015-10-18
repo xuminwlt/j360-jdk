@@ -5,13 +5,13 @@ package me.j360.jdk.thread;
  * User: min_xu
  * Date: 2015/10/17
  * Time: 11:59
- * ËµÃ÷£º
+ * Ëµï¿½ï¿½ï¿½ï¿½
  */
 public class MyThread extends Thread{
 
     @Override
     public void run(){
-
+        System.out.println("MyThread.run()");
     }
 
 }
