@@ -25,9 +25,10 @@ Set
 - 并发
  - 继承Thread
  - 实现Runnable接口
- - 使用ExecutorService、Callable、Future实现有返回结果的多线程
+ - (重点介绍)使用ExecutorService、Callable、Future实现有返回结果的多线程
  
- - 博客：
+ - 博客：http://my.oschina.net/smartsales/blog/518334
+ 
 
 
 - 一般语法common
