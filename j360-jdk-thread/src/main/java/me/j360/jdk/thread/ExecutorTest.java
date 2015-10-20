@@ -37,9 +37,6 @@ public class ExecutorTest {
         // 关闭线程池
         pool.shutdown();
 
-        // 获取所有并发任务的运行结果for (Future f : list) {
-        // 从Future对象上获取任务的返回值，并输出到控制台
-        //System.out.println(">>>" + f.get().toString());
         for (Future f : list) {
             System.out.println(">>>" + f.isDone());
         }
