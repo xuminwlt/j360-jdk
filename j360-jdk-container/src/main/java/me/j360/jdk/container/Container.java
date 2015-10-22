@@ -7,7 +7,7 @@ import java.util.*;
  * User: min_xu
  * Date: 2015/10/17
  * Time: 9:18
- * ËµÃ÷£º
+ * Ëµï¿½ï¿½ï¿½ï¿½
  */
 public class Container {
 
@@ -46,6 +46,10 @@ public class Container {
         set.add("j360-set");
     }
 
+    private static void hashTableAction(){
+        Hashtable<String,String> hashtable = new Hashtable<>();
+        hashtable.put("j360","test");
+    }
 
     private static void map(){
         HashMap<String,String> map = new HashMap<String, String>();
