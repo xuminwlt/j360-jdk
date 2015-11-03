@@ -21,9 +21,11 @@ public class Calculate {
     }
 
     public void setHolder(Holder holder){
+        //此处new了一个地址空间
         Holder h = new Holder();
         h.i = 30;
         holder = h;
+        //holder.i = 30;
         System.out.println(holder.i);
 
     }
