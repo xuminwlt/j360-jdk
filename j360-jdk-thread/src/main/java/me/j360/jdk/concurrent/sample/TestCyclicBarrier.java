@@ -1,4 +1,4 @@
-package me.j360.jdk.concurrent;
+package me.j360.jdk.concurrent.sample;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
