@@ -13,6 +13,7 @@
         <module>j360-jdk-thread</module>
         <module>j360-jdk-common</module>
         <module>j360-jdk-application</module>
+        <module>j360-jdk-application-spring</module>
     </modules>
 
     <properties>
