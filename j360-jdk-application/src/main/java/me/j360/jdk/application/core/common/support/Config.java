@@ -1,7 +1,7 @@
-package me.j360.jdk.application.common.support;
+package me.j360.jdk.application.core.common.support;
 
-import me.j360.jdk.application.common.constant.Constants;
-import me.j360.jdk.application.common.util.JSONUtils;
+import me.j360.jdk.application.core.common.constant.Constants;
+import me.j360.jdk.application.core.common.util.JSONUtils;
 
 import java.util.HashMap;
 import java.util.Map;

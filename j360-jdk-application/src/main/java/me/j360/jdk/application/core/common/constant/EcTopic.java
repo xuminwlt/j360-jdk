@@ -1,4 +1,4 @@
-package me.j360.jdk.application.common.constant;
+package me.j360.jdk.application.core.common.constant;
 
 /**
  * @author Robert HG (254963746@qq.com) on 5/11/15.

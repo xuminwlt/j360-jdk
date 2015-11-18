@@ -1,4 +1,4 @@
-package me.j360.jdk.application.common.support;
+package me.j360.jdk.application.core.common.support;
 
 import java.util.AbstractSet;
 import java.util.Collection;

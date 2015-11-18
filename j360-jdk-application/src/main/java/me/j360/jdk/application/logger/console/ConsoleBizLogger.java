@@ -1,6 +1,6 @@
 package me.j360.jdk.application.logger.console;
 
-import me.j360.jdk.application.common.util.JSONUtils;
+import me.j360.jdk.application.core.common.util.JSONUtils;
 import me.j360.jdk.application.logger.BizLogPo;
 import me.j360.jdk.application.logger.BizLogger;
 import org.slf4j.Logger;

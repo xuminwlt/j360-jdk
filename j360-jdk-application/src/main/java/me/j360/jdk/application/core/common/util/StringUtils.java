@@ -1,9 +1,9 @@
-package me.j360.jdk.application.common.util;
+package me.j360.jdk.application.core.common.util;
 
 
 
-import me.j360.jdk.application.common.support.FormattingTuple;
-import me.j360.jdk.application.common.support.MessageFormatter;
+import me.j360.jdk.application.core.common.support.FormattingTuple;
+import me.j360.jdk.application.core.common.support.MessageFormatter;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

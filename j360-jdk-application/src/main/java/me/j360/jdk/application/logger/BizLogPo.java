@@ -1,6 +1,6 @@
 package me.j360.jdk.application.logger;
 
-import me.j360.jdk.application.common.constant.Level;
+import me.j360.jdk.application.core.common.constant.Level;
 
 import java.util.Map;
 

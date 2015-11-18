@@ -1,6 +1,6 @@
 package me.j360.jdk.application.test.ec;
 
-import me.j360.jdk.application.common.support.Config;
+import me.j360.jdk.application.core.common.support.Config;
 import me.j360.jdk.application.ec.EventCenter;
 import me.j360.jdk.application.ec.EventInfo;
 import me.j360.jdk.application.ec.EventSubscriber;

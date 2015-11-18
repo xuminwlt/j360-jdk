@@ -1,4 +1,4 @@
-package me.j360.jdk.application.common.util;
+package me.j360.jdk.application.core.common.util;
 
 import java.util.*;
 

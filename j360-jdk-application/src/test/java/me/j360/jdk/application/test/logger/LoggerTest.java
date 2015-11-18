@@ -1,6 +1,6 @@
 package me.j360.jdk.application.test.logger;
 
-import me.j360.jdk.application.common.support.Config;
+import me.j360.jdk.application.core.common.support.Config;
 import me.j360.jdk.application.logger.BizLogPo;
 import me.j360.jdk.application.logger.BizLoggerDelegate;
 import org.junit.Test;

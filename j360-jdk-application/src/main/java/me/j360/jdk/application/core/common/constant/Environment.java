@@ -1,4 +1,4 @@
-package me.j360.jdk.application.common.constant;
+package me.j360.jdk.application.core.common.constant;
 
 /**
  * ³ÌÐò»·¾³

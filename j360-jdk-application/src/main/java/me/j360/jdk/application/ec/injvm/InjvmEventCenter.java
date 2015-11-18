@@ -1,8 +1,8 @@
 package me.j360.jdk.application.ec.injvm;
 
-import me.j360.jdk.application.common.constant.Constants;
-import me.j360.jdk.application.common.support.ConcurrentHashSet;
-import me.j360.jdk.application.common.util.JSONUtils;
+import me.j360.jdk.application.core.common.constant.Constants;
+import me.j360.jdk.application.core.common.support.ConcurrentHashSet;
+import me.j360.jdk.application.core.common.util.JSONUtils;
 import me.j360.jdk.application.ec.EventCenter;
 import me.j360.jdk.application.ec.EventInfo;
 import me.j360.jdk.application.ec.EventSubscriber;

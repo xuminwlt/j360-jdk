@@ -1,11 +1,11 @@
-package me.j360.jdk.application.common.support;
+package me.j360.jdk.application.core.common.support;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * ю╢вт slf4j
- * @author Robert HG (254963746@qq.com) on 5/19/15.
+ *
  */
 public class MessageFormatter {
     

@@ -1,9 +1,9 @@
 package me.j360.jdk.application.logger;
 
-import me.j360.jdk.application.common.constant.Constants;
-import me.j360.jdk.application.common.support.Config;
-import me.j360.jdk.application.common.util.CollectionUtils;
-import me.j360.jdk.application.common.util.NamedThreadFactory;
+import me.j360.jdk.application.core.common.constant.Constants;
+import me.j360.jdk.application.core.common.support.Config;
+import me.j360.jdk.application.core.common.util.CollectionUtils;
+import me.j360.jdk.application.core.common.util.NamedThreadFactory;
 import me.j360.jdk.application.logger.console.ConsoleBizLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
