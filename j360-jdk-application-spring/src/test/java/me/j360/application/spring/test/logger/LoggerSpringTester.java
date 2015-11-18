@@ -1,12 +1,10 @@
-package me.j360.application.spring.test;
+package me.j360.application.spring.test.logger;
 
 import me.j360.jdk.application.logger.BizLogPo;
 import me.j360.jdk.application.logger.BizLogger;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
