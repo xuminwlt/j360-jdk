@@ -42,7 +42,7 @@ public class BizLoggerFactoryBean implements FactoryBean<BizLogger>,
 
         @Override
         public boolean isSingleton() {
-                return false;
+                return true;
         }
 
         @Override
