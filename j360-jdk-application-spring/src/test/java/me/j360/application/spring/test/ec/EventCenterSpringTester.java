@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class EventCenterSpringTester {
 
     @Test
-    public void loggerSpringTest() throws InterruptedException {
+    public void eventCenterSpringTest() throws InterruptedException {
         ApplicationContext context = new AnnotationConfigApplicationContext(EventCenterSpringConfig.class);
         EventCenter eventCenter = (EventCenter) context.getBean("eventCenter");
 
