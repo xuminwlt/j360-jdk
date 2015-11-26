@@ -8,4 +8,9 @@ package me.j360.jdk.application.test;
  * 说明：
  */
 public class MainTest {
+
+    public static void main(String[] args){
+
+    }
+
 }

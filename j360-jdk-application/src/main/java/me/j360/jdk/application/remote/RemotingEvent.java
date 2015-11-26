@@ -1,0 +1,34 @@
+package me.j360.jdk.application.remote;
+
+/**
+ * ÊÂ¼þ
+ */
+public class RemotingEvent {
+
+    private final RemotingEventType type;
+    private final String remoteAddr;
+    private final Channel channel;
+
+    public RemotingEvent(RemotingEventType type, String remoteAddr, Channel channel) {
+        this.type = type;
+        this.remoteAddr = remoteAddr;
+        this.channel = channel;
+    }
+
+    public RemotingEventType getType() {
+        return type;
+    }
+
+    public String getRemoteAddr() {
+        return remoteAddr;
+    }
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    @Override
+    public String toString() {
+        return "NettyEvent [type=" + type + ", remoteAddr=" + remoteAddr + ", channel=" + channel + "]";
+    }
+}
