@@ -12,7 +12,7 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 /**
- * Í¨ÐÅ²ãÒ»Ð©¸¨Öú·½·¨
+ * é€šä¿¡å±‚ä¸€äº›è¾…åŠ©æ–¹æ³•
  */
 public class RemotingHelper {
 

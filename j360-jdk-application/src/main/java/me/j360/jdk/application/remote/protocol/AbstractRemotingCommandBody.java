@@ -12,31 +12,31 @@ import java.util.Map;
 
 /**
  * @author Robert HG (254963746@qq.com) on 7/24/14.
- * ³éÏóµÄheader ´«ÊäĞÅÏ¢
+ * æŠ½è±¡çš„header ä¼ è¾“ä¿¡æ¯
  */
 public class AbstractRemotingCommandBody implements RemotingCommandBody {
 
     /**
-     * ½Úµã×é µ±Ç°½ÚµãµÄ group(Í³Ò»ÀàĞÍ, ¾ßÓĞÏàÍ¬¹¦ÄÜµÄ½ÚµãgroupÏàÍ¬)
+     * èŠ‚ç‚¹ç»„ å½“å‰èŠ‚ç‚¹çš„ group(ç»Ÿä¸€ç±»å‹, å…·æœ‰ç›¸åŒåŠŸèƒ½çš„èŠ‚ç‚¹groupç›¸åŒ)
      */
     @NotNull
     private String nodeGroup;
 
     /**
-     * NodeType µÄ×Ö·û´®±íÊ¾, ½ÚµãÀàĞÍ
+     * NodeType çš„å­—ç¬¦ä¸²è¡¨ç¤º, èŠ‚ç‚¹ç±»å‹
      */
     @NotNull
     private String nodeType;
 
     /**
-     * µ±Ç°½ÚµãµÄÎ¨Ò»±êÊ¶
+     * å½“å‰èŠ‚ç‚¹çš„å”¯ä¸€æ ‡è¯†
      */
     @NotNull
     private String identity;
 
     private Long timestamp = SystemClock.now();
 
-    // ¶îÍâµÄ²ÎÊı
+    // é¢å¤–çš„å‚æ•°
     @Nullable
     private Map<String, Object> extParams;
 

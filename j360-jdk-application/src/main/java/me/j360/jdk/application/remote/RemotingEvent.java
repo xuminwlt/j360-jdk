@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote;
 
 /**
- * ÊÂ¼þ
+ * äº‹ä»¶
  */
 public class RemotingEvent {
 

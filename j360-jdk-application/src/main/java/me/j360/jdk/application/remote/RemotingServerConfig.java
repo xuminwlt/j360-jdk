@@ -4,7 +4,7 @@ package me.j360.jdk.application.remote;
 import me.j360.jdk.application.core.common.constant.Constants;
 
 /**
- * ·şÎñ¶ËÅäÖÃ
+ * æœåŠ¡ç«¯é…ç½®
  */
 public class RemotingServerConfig {
     private int listenPort = 8888;

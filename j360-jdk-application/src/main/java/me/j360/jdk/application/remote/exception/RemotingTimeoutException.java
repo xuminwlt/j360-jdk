@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.exception;
 
 /**
- * RPC调用超时异常
+ * RPC璋冪敤瓒呮椂寮傚父
  */
 public class RemotingTimeoutException extends RemotingException {
 

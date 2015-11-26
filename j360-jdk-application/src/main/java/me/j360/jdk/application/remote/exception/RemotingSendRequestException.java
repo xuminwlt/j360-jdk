@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.exception;
 
 /**
- * RPCµ÷ÓÃÖĞ£¬¿Í»§¶Ë·¢ËÍÇëÇóÊ§°Ü£¬Å×³ö´ËÒì³£
+ * RPCè°ƒç”¨ä¸­ï¼Œå®¢æˆ·ç«¯å‘é€è¯·æ±‚å¤±è´¥ï¼ŒæŠ›å‡ºæ­¤å¼‚å¸¸
  */
 public class RemotingSendRequestException extends RemotingException {
     private static final long serialVersionUID = 5391285827332471674L;

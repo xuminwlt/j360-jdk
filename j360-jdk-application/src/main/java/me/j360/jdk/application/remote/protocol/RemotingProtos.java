@@ -5,15 +5,15 @@ public final class RemotingProtos {
     }
 
     public enum ResponseCode {
-        // �ɹ�
+        // 成功
         SUCCESS(0),
-        // ������δ�����쳣
+        // 发生了未捕获异常
         SYSTEM_ERROR(1),
-        // �����̳߳�ӵ�£�ϵͳ��æ
+        // 由于线程池拥堵，系统繁忙
         SYSTEM_BUSY(2),
-        // ������벻֧��
+        // 请求代码不支持
         REQUEST_CODE_NOT_SUPPORTED(3),
-        // �����������
+        // 请求参数错误
         REQUEST_PARAM_ERROR(4);
 
         private int code;

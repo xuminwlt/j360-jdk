@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.protocol;
 
 /**
- * ±êÊ¶RemotingCommandÊÇÇëÇó»¹ÊÇÓ¦´ðÀàÐÍ
+ * æ ‡è¯†RemotingCommandæ˜¯è¯·æ±‚è¿˜æ˜¯åº”ç­”ç±»åž‹
  */
 public enum RemotingCommandType {
     REQUEST_COMMAND,

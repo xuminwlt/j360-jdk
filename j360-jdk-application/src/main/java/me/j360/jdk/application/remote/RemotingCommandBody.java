@@ -7,7 +7,7 @@ import me.j360.jdk.application.remote.exception.RemotingCommandFieldCheckExcepti
 import java.io.Serializable;
 
 /**
- * RemotingCommandÖĞ×Ô¶¨Òå×Ö¶Î·´Éä¶ÔÏóµÄ¹«¹²½Ó¿Ú
+ * RemotingCommandä¸­è‡ªå®šä¹‰å­—æ®µåå°„å¯¹è±¡çš„å…¬å…±æ¥å£
  */
 public interface RemotingCommandBody extends Serializable {
 

@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote;
 
 /**
- * 事件类型
+ * 浜嬩欢绫诲瀷
  */
 public enum RemotingEventType {
     CONNECT,

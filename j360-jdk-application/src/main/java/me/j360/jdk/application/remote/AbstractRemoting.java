@@ -25,25 +25,25 @@ import java.util.concurrent.*;
 
 
 /**
- * ServerÓëClient¹«ÓÃ³éÏóÀà
+ * Serverä¸Clientå…¬ç”¨æŠ½è±¡ç±»
  */
 public abstract class AbstractRemoting {
     private static final Logger LOGGER = LoggerFactory.getLogger(RemotingHelper.RemotingLogName);
 
-    // ĞÅºÅÁ¿£¬OnewayÇé¿ö»áÊ¹ÓÃ£¬·ÀÖ¹±¾µØ»º´æÇëÇó¹ı¶à
+    // ä¿¡å·é‡ï¼ŒOnewayæƒ…å†µä¼šä½¿ç”¨ï¼Œé˜²æ­¢æœ¬åœ°ç¼“å­˜è¯·æ±‚è¿‡å¤š
     protected final Semaphore semaphoreOneway;
 
-    // ĞÅºÅÁ¿£¬Òì²½µ÷ÓÃÇé¿ö»áÊ¹ÓÃ£¬·ÀÖ¹±¾µØ»º´æÇëÇó¹ı¶à
+    // ä¿¡å·é‡ï¼Œå¼‚æ­¥è°ƒç”¨æƒ…å†µä¼šä½¿ç”¨ï¼Œé˜²æ­¢æœ¬åœ°ç¼“å­˜è¯·æ±‚è¿‡å¤š
     protected final Semaphore semaphoreAsync;
 
-    // »º´æËùÓĞ¶ÔÍâÇëÇó
+    // ç¼“å­˜æ‰€æœ‰å¯¹å¤–è¯·æ±‚
     protected final ConcurrentHashMap<Integer /* opaque */, ResponseFuture> responseTable =
             new ConcurrentHashMap<Integer, ResponseFuture>(256);
-    // ×¢²áµÄ¸÷¸öRPC´¦ÀíÆ÷
+    // æ³¨å†Œçš„å„ä¸ªRPCå¤„ç†å™¨
     protected final HashMap<Integer/* request code */, Pair<RemotingProcessor, ExecutorService>> processorTable =
             new HashMap<Integer, Pair<RemotingProcessor, ExecutorService>>(64);
     protected final RemotingEventExecutor remotingEventExecutor = new RemotingEventExecutor();
-    // Ä¬ÈÏÇëÇó´úÂë´¦ÀíÆ÷
+    // é»˜è®¤è¯·æ±‚ä»£ç å¤„ç†å™¨
     protected Pair<RemotingProcessor, ExecutorService> defaultRequestProcessor;
     protected final ChannelEventListener channelEventListener;
 
@@ -72,7 +72,7 @@ public abstract class AbstractRemoting {
                 public void run() {
                     try {
                         final RemotingCommand response = pair.getObject1().processRequest(channel, cmd);
-                        // OnewayĞÎÊ½ºöÂÔÓ¦´ğ½á¹û
+                        // Onewayå½¢å¼å¿½ç•¥åº”ç­”ç»“æœ
                         if (!RemotingCommandHelper.isOnewayRPC(cmd)) {
                             if (response != null) {
                                 response.setOpaque(cmd.getOpaque());
@@ -94,7 +94,7 @@ public abstract class AbstractRemoting {
                                     LOGGER.error(response.toString());
                                 }
                             } else {
-                                // ÊÕµ½ÇëÇó£¬µ«ÊÇÃ»ÓĞ·µ»ØÓ¦´ğ£¬¿ÉÄÜÊÇprocessRequestÖĞ½øĞĞÁËÓ¦´ğ£¬ºöÂÔÕâÖÖÇé¿ö
+                                // æ”¶åˆ°è¯·æ±‚ï¼Œä½†æ˜¯æ²¡æœ‰è¿”å›åº”ç­”ï¼Œå¯èƒ½æ˜¯processRequestä¸­è¿›è¡Œäº†åº”ç­”ï¼Œå¿½ç•¥è¿™ç§æƒ…å†µ
                             }
                         }
                     } catch (Exception e) {
@@ -113,7 +113,7 @@ public abstract class AbstractRemoting {
             };
 
             try {
-                // ÕâÀïĞèÒª×öÁ÷¿Ø£¬ÒªÇóÏß³Ì³Ø¶ÔÓ¦µÄ¶ÓÁĞ±ØĞëÊÇÓĞ´óĞ¡ÏŞÖÆµÄ
+                // è¿™é‡Œéœ€è¦åšæµæ§ï¼Œè¦æ±‚çº¿ç¨‹æ± å¯¹åº”çš„é˜Ÿåˆ—å¿…é¡»æ˜¯æœ‰å¤§å°é™åˆ¶çš„
                 pair.getObject2().submit(run);
             } catch (RejectedExecutionException e) {
                 LOGGER.warn(RemotingHelper.parseChannelRemoteAddr(channel) //
@@ -146,7 +146,7 @@ public abstract class AbstractRemoting {
 
             responseFuture.release();
 
-            // Òì²½µ÷ÓÃ
+            // å¼‚æ­¥è°ƒç”¨
             if (responseFuture.getAsyncCallback() != null) {
                 boolean runInThisThread = false;
                 ExecutorService executor = this.getCallbackExecutor();
@@ -178,7 +178,7 @@ public abstract class AbstractRemoting {
                     }
                 }
             }
-            // Í¬²½µ÷ÓÃ
+            // åŒæ­¥è°ƒç”¨
             else {
                 responseFuture.putResponse(cmd);
             }
@@ -236,7 +236,7 @@ public abstract class AbstractRemoting {
                     new ResponseFuture(request.getOpaque(), timeoutMillis, null, null);
             this.responseTable.put(request.getOpaque(), responseFuture);
 
-            //´Ë´¦±ØĞëÒª·µ»ØresponseFuture£¬·ñÔòÊ§°Ü
+            //æ­¤å¤„å¿…é¡»è¦è¿”å›responseFutureï¼Œå¦åˆ™å¤±è´¥
             channel.writeAndFlush(request).addListener(new ChannelHandlerListener() {
                 @Override
                 public void operationComplete(Future future) throws Exception {
@@ -260,12 +260,12 @@ public abstract class AbstractRemoting {
 
             RemotingCommand responseCommand = responseFuture.waitResponse(timeoutMillis);
             if (null == responseCommand) {
-                // ·¢ËÍÇëÇó³É¹¦£¬¶ÁÈ¡Ó¦´ğ³¬Ê±
+                // å‘é€è¯·æ±‚æˆåŠŸï¼Œè¯»å–åº”ç­”è¶…æ—¶
                 if (responseFuture.isSendRequestOK()) {
                     throw new RemotingTimeoutException(RemotingHelper.parseChannelRemoteAddr(channel),
                             timeoutMillis, responseFuture.getCause());
                 }
-                // ·¢ËÍÇëÇóÊ§°Ü
+                // å‘é€è¯·æ±‚å¤±è´¥
                 else {
                     throw new RemotingSendRequestException(RemotingHelper.parseChannelRemoteAddr(channel),
                             responseFuture.getCause());
@@ -425,7 +425,7 @@ public abstract class AbstractRemoting {
     }
 
     protected Codec getCodec() {
-        // TODO ¸ÄÎªSPI
+        // TODO æ”¹ä¸ºSPI
         return new DefaultCodec();
     }
 

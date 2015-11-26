@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 
 /**
- * 标识字段可以非空
+ * 鏍囪瘑瀛楁鍙互闈炵┖
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

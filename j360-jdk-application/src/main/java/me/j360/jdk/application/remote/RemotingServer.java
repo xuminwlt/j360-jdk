@@ -10,7 +10,7 @@ import me.j360.jdk.application.remote.protocol.RemotingCommand;
 import java.util.concurrent.ExecutorService;
 
 /**
- * Ô¶³ÌÍ¨ĞÅ£¬Server½Ó¿Ú
+ * è¿œç¨‹é€šä¿¡ï¼ŒServeræ¥å£
  */
 public interface RemotingServer {
 
@@ -18,33 +18,33 @@ public interface RemotingServer {
 
 
     /**
-     * ×¢²áÇëÇó´¦ÀíÆ÷£¬ExecutorService±ØĞëÒª¶ÔÓ¦Ò»¸ö¶ÓÁĞ´óĞ¡ÓĞÏŞÖÆµÄ×èÈû¶ÓÁĞ£¬·ÀÖ¹OOM
+     * æ³¨å†Œè¯·æ±‚å¤„ç†å™¨ï¼ŒExecutorServiceå¿…é¡»è¦å¯¹åº”ä¸€ä¸ªé˜Ÿåˆ—å¤§å°æœ‰é™åˆ¶çš„é˜»å¡é˜Ÿåˆ—ï¼Œé˜²æ­¢OOM
      */
     public void registerProcessor(final int requestCode, final RemotingProcessor processor,
                                   final ExecutorService executor);
 
     /**
-     * ×¢²áÄ¬ÈÏÇëÇó´¦ÀíÆ÷
+     * æ³¨å†Œé»˜è®¤è¯·æ±‚å¤„ç†å™¨
      */
     public void registerDefaultProcessor(final RemotingProcessor processor, final ExecutorService executor);
 
 
     /**
-     * Í¬²½µ÷ÓÃ
+     * åŒæ­¥è°ƒç”¨
      */
     public RemotingCommand invokeSync(final Channel channel, final RemotingCommand request,
                                       final long timeoutMillis) throws InterruptedException, RemotingSendRequestException,
             RemotingTimeoutException;
 
     /**
-     * Òì²½µ÷ÓÃ
+     * å¼‚æ­¥è°ƒç”¨
      */
     public void invokeAsync(final Channel channel, final RemotingCommand request, final long timeoutMillis,
                             final AsyncCallback asyncCallback) throws InterruptedException,
             RemotingTooMuchRequestException, RemotingTimeoutException, RemotingSendRequestException;
 
     /**
-     * µ¥Ïòµ÷ÓÃ
+     * å•å‘è°ƒç”¨
      */
     public void invokeOneway(final Channel channel, final RemotingCommand request, final long timeoutMillis)
             throws InterruptedException, RemotingTooMuchRequestException, RemotingTimeoutException,

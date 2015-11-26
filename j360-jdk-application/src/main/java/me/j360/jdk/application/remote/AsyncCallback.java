@@ -2,7 +2,7 @@ package me.j360.jdk.application.remote;
 
 
 /**
- * 异步调用应答回调接口
+ * 寮傛璋冪敤搴旂瓟鍥炶皟鎺ュ彛
  */
 public interface AsyncCallback {
 

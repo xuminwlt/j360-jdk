@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.exception;
 
 /**
- * Òì²½µ÷ÓÃ»òÕßOnewayµ÷ÓÃ£¬¶Ñ»ıµÄÇëÇó³¬¹ıĞÅºÅÁ¿×î´óÖµ
+ * å¼‚æ­¥è°ƒç”¨æˆ–è€…Onewayè°ƒç”¨ï¼Œå †ç§¯çš„è¯·æ±‚è¶…è¿‡ä¿¡å·é‡æœ€å¤§å€¼
  */
 public class RemotingTooMuchRequestException extends RemotingException {
     private static final long serialVersionUID = 4326919581254519654L;

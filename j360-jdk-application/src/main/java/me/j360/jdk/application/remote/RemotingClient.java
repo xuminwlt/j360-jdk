@@ -9,41 +9,41 @@ import java.util.concurrent.ExecutorService;
 
 
 /**
- * Ô¶³ÌÍ¨ĞÅ£¬Client½Ó¿Ú
+ * è¿œç¨‹é€šä¿¡ï¼ŒClientæ¥å£
  */
 public interface RemotingClient {
 
     public void start() throws RemotingException;
 
     /**
-     * Í¬²½µ÷ÓÃ
+     * åŒæ­¥è°ƒç”¨
      */
     public RemotingCommand invokeSync(final String addr, final RemotingCommand request,
                                       final long timeoutMillis) throws InterruptedException, RemotingConnectException,
             RemotingSendRequestException, RemotingTimeoutException;
 
     /**
-     * Òì²½µ÷ÓÃ
+     * å¼‚æ­¥è°ƒç”¨
      */
     public void invokeAsync(final String addr, final RemotingCommand request, final long timeoutMillis,
                             final AsyncCallback asyncCallback) throws InterruptedException, RemotingConnectException,
             RemotingTooMuchRequestException, RemotingTimeoutException, RemotingSendRequestException;
 
     /**
-     * µ¥Ïòµ÷ÓÃ
+     * å•å‘è°ƒç”¨
      */
     public void invokeOneway(final String addr, final RemotingCommand request, final long timeoutMillis)
             throws InterruptedException, RemotingConnectException, RemotingTooMuchRequestException,
             RemotingTimeoutException, RemotingSendRequestException;
 
     /**
-     * ×¢²á´¦ÀíÆ÷
+     * æ³¨å†Œå¤„ç†å™¨
      */
     public void registerProcessor(final int requestCode, final RemotingProcessor processor,
                                   final ExecutorService executor);
 
     /**
-     * ×¢²áÄ¬ÈÏ´¦ÀíÆ÷
+     * æ³¨å†Œé»˜è®¤å¤„ç†å™¨
      */
     public void registerDefaultProcessor(final RemotingProcessor processor, final ExecutorService executor);
 

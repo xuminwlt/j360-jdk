@@ -5,7 +5,7 @@ import me.j360.jdk.application.remote.exception.RemotingCommandException;
 import me.j360.jdk.application.remote.protocol.RemotingCommand;
 
 /**
- * 接收请求处理器，服务器与客户端通用
+ * 鎺ユ敹璇锋眰澶勭悊鍣紝鏈嶅姟鍣ㄤ笌瀹㈡埛绔�氱敤
  */
 public interface RemotingProcessor {
     public RemotingCommand processRequest(Channel channel, RemotingCommand request)

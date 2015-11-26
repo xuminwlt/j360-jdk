@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.exception;
 
 /**
- * Client连接Server失败，抛出此异常
+ * Client杩炴帴Server澶辫触锛屾姏鍑烘寮傚父
  */
 public class RemotingConnectException extends RemotingException {
     private static final long serialVersionUID = -5565366231695911316L;

@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote;
 
 /**
- * 监听Channel的事件，包括连接断开、连接建立、连接异常，传送这些事件到应用层
+ * 锟斤拷锟斤拷Channel锟斤拷锟铰硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟接断匡拷锟斤拷锟斤拷锟接斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟届常锟斤拷锟斤拷锟斤拷锟斤拷些锟铰硷拷锟斤拷应锟矫诧拷
  */
 public interface ChannelEventListener {
 

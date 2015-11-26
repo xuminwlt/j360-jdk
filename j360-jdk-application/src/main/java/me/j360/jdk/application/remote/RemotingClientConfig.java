@@ -4,17 +4,17 @@ package me.j360.jdk.application.remote;
 import me.j360.jdk.application.core.common.constant.Constants;
 
 /**
- * ¿Í»§¶ËÅäÖÃÀà
+ * å®¢æˆ·ç«¯é…ç½®ç±»
  */
 public class RemotingClientConfig {
-    // ´¦ÀíServer Response/Request
+    // å¤„ç†Server Response/Request
     private int clientWorkerThreads = 4;
     private int clientCallbackExecutorThreads = Constants.AVAILABLE_PROCESSOR * 2;
     private int clientSelectorThreads = 1;
     private int clientOnewaySemaphoreValue = 256;
     private int clientAsyncSemaphoreValue = 128;
     private long connectTimeoutMillis = 3000;
-    // channel³¬¹ı1·ÖÖÓ²»±»·ÃÎÊ ¾Í¹Ø±Õ
+    // channelè¶…è¿‡1åˆ†é’Ÿä¸è¢«è®¿é—® å°±å…³é—­
     private long channelNotActiveInterval = 1000 * 60;
 
     private int readerIdleTimeSeconds = 0;

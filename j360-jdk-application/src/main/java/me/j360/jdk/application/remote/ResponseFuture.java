@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Òì²½ÇëÇóÓ¦´ğ·â×°
+ * å¼‚æ­¥è¯·æ±‚åº”ç­”å°è£…
  */
 public class ResponseFuture {
     private final int opaque;
@@ -17,9 +17,9 @@ public class ResponseFuture {
     private final AsyncCallback asyncCallback;
     private final long beginTimestamp = SystemClock.now();
     private final CountDownLatch countDownLatch = new CountDownLatch(1);
-    // ±£Ö¤ĞÅºÅÁ¿ÖÁ¶àÖÁÉÙÖ»±»ÊÍ·ÅÒ»´Î
+    // ä¿è¯ä¿¡å·é‡è‡³å¤šè‡³å°‘åªè¢«é‡Šæ”¾ä¸€æ¬¡
     private final SemaphoreReleaseOnlyOnce once;
-    // ±£Ö¤»Øµ÷µÄcallback·½·¨ÖÁ¶àÖÁÉÙÖ»±»Ö´ĞĞÒ»´Î
+    // ä¿è¯å›è°ƒçš„callbackæ–¹æ³•è‡³å¤šè‡³å°‘åªè¢«æ‰§è¡Œä¸€æ¬¡
     private final AtomicBoolean executeCallbackOnlyOnce = new AtomicBoolean(false);
     private volatile RemotingCommand responseCommand;
     private volatile boolean sendRequestOK = true;

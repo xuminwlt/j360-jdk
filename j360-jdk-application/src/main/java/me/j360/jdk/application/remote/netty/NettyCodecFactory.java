@@ -76,7 +76,7 @@ public class NettyCodecFactory {
             } catch (Exception e) {
                 Channel channel = new NettyChannel(ctx);
                 LOGGER.error("decode exception, {}", RemotingHelper.parseChannelRemoteAddr(channel), e);
-                // ÕâÀï¹Ø±Õºó£¬ »áÔÚpipelineÖĞ²úÉúÊÂ¼ş£¬Í¨¹ı¾ßÌåµÄcloseÊÂ¼şÀ´ÇåÀíÊı¾İ½á¹¹
+                // è¿™é‡Œå…³é—­åï¼Œ ä¼šåœ¨pipelineä¸­äº§ç”Ÿäº‹ä»¶ï¼Œé€šè¿‡å…·ä½“çš„closeäº‹ä»¶æ¥æ¸…ç†æ•°æ®ç»“æ„
                 RemotingHelper.closeChannel(channel);
             }
 

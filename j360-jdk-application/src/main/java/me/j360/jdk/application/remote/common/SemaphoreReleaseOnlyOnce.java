@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 /**
- * Ê¹ÓÃ²¼¶ûÔ­×Ó±äÁ¿£¬ĞÅºÅÁ¿±£Ö¤Ö»ÊÍ·ÅÒ»´Î
+ * ä½¿ç”¨å¸ƒå°”åŸå­å˜é‡ï¼Œä¿¡å·é‡ä¿è¯åªé‡Šæ”¾ä¸€æ¬¡
  */
 public class SemaphoreReleaseOnlyOnce {
     private final AtomicBoolean released = new AtomicBoolean(false);

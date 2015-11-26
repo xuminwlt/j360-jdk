@@ -20,15 +20,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
- * Remoting·şÎñ¶ËÊµÏÖ
+ * RemotingæœåŠ¡ç«¯å®ç°
  */
 public abstract class AbstractRemotingServer extends AbstractRemoting implements RemotingServer {
     protected static final Logger LOGGER = LoggerFactory.getLogger(RemotingHelper.RemotingLogName);
 
     protected final RemotingServerConfig remotingServerConfig;
-    // ´¦ÀíCallbackÓ¦´ğÆ÷
+    // å¤„ç†Callbackåº”ç­”å™¨
     private final ExecutorService publicExecutor;
-    // ¶¨Ê±Æ÷
+    // å®šæ—¶å™¨
     private final Timer timer = new Timer("ServerHouseKeepingService", true);
 
     public AbstractRemotingServer(final RemotingServerConfig remotingServerConfig,
@@ -61,7 +61,7 @@ public abstract class AbstractRemotingServer extends AbstractRemoting implements
             this.remotingEventExecutor.start();
         }
 
-        // Ã¿¸ô1ÃëÉ¨ÃèÏÂÒì²½µ÷ÓÃ³¬Ê±Çé¿ö
+        // æ¯éš”1ç§’æ‰«æä¸‹å¼‚æ­¥è°ƒç”¨è¶…æ—¶æƒ…å†µ
         this.timer.scheduleAtFixedRate(new TimerTask() {
 
             @Override

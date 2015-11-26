@@ -11,18 +11,18 @@ import java.nio.ByteBuffer;
 /**
  * @author Robert HG (254963746@qq.com) on 11/5/15.
  *         <p/>
- *         // RemotingÍ¨ÐÅÐ­Òé
+ *         // Remotingé€šä¿¡åè®®
  *         //
- *         // Ð­Òé¸ñÊ½ <length> <serializable id> <header length> <header data> <body length> <body data> <body class>
+ *         // åè®®æ ¼å¼ <length> <serializable id> <header length> <header data> <body length> <body data> <body class>
  *         //            1        2               3             4             5             6           7
- *         // Ð­Òé·Ö4²¿·Ö£¬º¬Òå·Ö±ðÈçÏÂ
- *         //     1¡¢´ó¶Ë4¸ö×Ö½ÚÕûÊý£¬µÈÓÚ2¡¢3¡¢4¡¢5¡¢6, 7³¤¶È×ÜºÍ
- *         //     1¡¢´ó¶Ë4¸ö×Ö½ÚÕûÊý£¬µÈ serializable id
- *         //     3¡¢header ÐÅÏ¢³¤¶È ´ó¶Ë4¸ö×Ö½ÚÕûÊý£¬µÈÓÚ3µÄ³¤¶È
- *         //     4¡¢header ÐÅÏ¢ÄÚÈÝ
- *         //     5¡¢body ÐÅÏ¢³¤¶È  ´ó¶Ë4¸ö×Ö½ÚÕûÊý£¬µÈÓÚ5µÄ³¤¶È
- *         //     6¡¢body ÐÅÏ¢ÄÚÈÝ
- *         //     7¡¢body µÄclassÃû³Æ
+ *         // åè®®åˆ†4éƒ¨åˆ†ï¼Œå«ä¹‰åˆ†åˆ«å¦‚ä¸‹
+ *         //     1ã€å¤§ç«¯4ä¸ªå­—èŠ‚æ•´æ•°ï¼Œç­‰äºŽ2ã€3ã€4ã€5ã€6, 7é•¿åº¦æ€»å’Œ
+ *         //     1ã€å¤§ç«¯4ä¸ªå­—èŠ‚æ•´æ•°ï¼Œç­‰ serializable id
+ *         //     3ã€header ä¿¡æ¯é•¿åº¦ å¤§ç«¯4ä¸ªå­—èŠ‚æ•´æ•°ï¼Œç­‰äºŽ3çš„é•¿åº¦
+ *         //     4ã€header ä¿¡æ¯å†…å®¹
+ *         //     5ã€body ä¿¡æ¯é•¿åº¦  å¤§ç«¯4ä¸ªå­—èŠ‚æ•´æ•°ï¼Œç­‰äºŽ5çš„é•¿åº¦
+ *         //     6ã€body ä¿¡æ¯å†…å®¹
+ *         //     7ã€body çš„classåç§°
  *         </p>
  */
 public class DefaultCodec extends AbstractCodec {

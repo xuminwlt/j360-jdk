@@ -1,7 +1,7 @@
 package me.j360.jdk.application.remote.common;
 
 /**
- * °ü×°2¸ö¶ÔÏó
+ * åŒ…è£…2ä¸ªå¯¹è±¡
  */
 public class Pair<T1, T2> {
     private T1 object1;
