@@ -14,7 +14,7 @@ import me.j360.jdk.application.remote.netty.NettyRemotingServer;
  * User: min_xu
  * Date: 2015/11/26
  * Time: 16:53
- * 说明：rpc 服务器端
+ * 说明：rpc 服务器端，启动nettyServer作为remoteServer实现
  */
 public class RemoteServerTest {
     public static void main(String[] args){
