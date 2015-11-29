@@ -1,6 +1,7 @@
 package me.j360.jdk.application.core.common.support;
 
 import me.j360.jdk.application.ec.EventCenter;
+import me.j360.jdk.application.remote.protocol.CommandBodyWrapper;
 
 /**
  * Created with j360-jdk -> me.j360.jdk.application.core.common.support.
@@ -34,4 +35,14 @@ public abstract class Application {
     // 事件中心
     private EventCenter eventCenter;
 
+
+    private CommandBodyWrapper commandBodyWrapper;
+
+    public CommandBodyWrapper getCommandBodyWrapper() {
+        return commandBodyWrapper;
+    }
+
+    public void setCommandBodyWrapper(CommandBodyWrapper commandBodyWrapper) {
+        this.commandBodyWrapper = commandBodyWrapper;
+    }
 }

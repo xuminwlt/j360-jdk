@@ -2,6 +2,7 @@ package me.j360.jdk.application.core.common.support;
 
 import me.j360.jdk.application.core.common.constant.Constants;
 import me.j360.jdk.application.core.common.util.JSONUtils;
+import me.j360.jdk.application.remote.job.NodeType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class Config {
     // 工作线程, 目前只对 TaskTracker 有效
     private int workThreads;
     // 节点类型
-    //private NodeType nodeType;
+    private NodeType nodeType;
     // 注册中心 地址
     private String registryAddress;
     // 远程连接超时时间
@@ -255,5 +256,13 @@ public class Config {
     @Override
     public String toString() {
         return JSONUtils.toJSONString(this);
+    }
+
+    public NodeType getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(NodeType nodeType) {
+        this.nodeType = nodeType;
     }
 }

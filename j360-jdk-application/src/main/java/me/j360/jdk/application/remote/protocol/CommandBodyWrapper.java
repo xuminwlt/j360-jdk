@@ -1,5 +1,6 @@
 package me.j360.jdk.application.remote.protocol;
 
+import me.j360.jdk.application.core.common.support.Application;
 import me.j360.jdk.application.core.common.support.Config;
 
 public class CommandBodyWrapper {
@@ -17,8 +18,8 @@ public class CommandBodyWrapper {
         return commandBody;
     }
 
-    /*public static <T extends AbstractRemotingCommandBody> T wrapper(Application application, T commandBody) {
+    public static <T extends AbstractRemotingCommandBody> T wrapper(Application application, T commandBody) {
         return application.getCommandBodyWrapper().wrapper(commandBody);
-    }*/
+    }
 
 }
