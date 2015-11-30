@@ -27,7 +27,7 @@ import java.util.List;
  * 说明：rpc 客户端
  */
 public class RemoteClientTest {
-    public static void main(String[] args) throws RemotingException {
+    public static void main(String[] args) throws RemotingException, InterruptedException {
 
 
 
@@ -54,26 +54,19 @@ public class RemoteClientTest {
         config.setInvokeTimeoutMillis(60000);
 
         final List<Job> jobs = Collections.singletonList(job);
-
+        application.setConfig(config);
         application.setCommandBodyWrapper(new CommandBodyWrapper(config));
 
         remotingClient.start();
 
-        try {
-            JobSubmitRequest jobSubmitRequest = CommandBodyWrapper.wrapper(application, new JobSubmitRequest());
-            jobSubmitRequest.setJobs(jobs);
+        JobSubmitRequest jobSubmitRequest = CommandBodyWrapper.wrapper(application, new JobSubmitRequest());
+        jobSubmitRequest.setJobs(jobs);
 
-            RemotingCommand requestCommand = RemotingCommand.createRequestCommand(
+        RemotingCommand requestCommand = RemotingCommand.createRequestCommand(
                     JobProtos.RequestCode.SUBMIT_JOB.code(), jobSubmitRequest);
 
-            RemotingCommand response = remotingClient.invokeSync("192.168.247.1:35001",
+        RemotingCommand response = remotingClient.invokeSync("192.168.247.1:35001",
                     requestCommand, application.getConfig().getInvokeTimeoutMillis());
-
-
-        }catch (Exception e){
-
-        }
-
 
         //模拟JobTracker注册到RemoteClient里面
         /*

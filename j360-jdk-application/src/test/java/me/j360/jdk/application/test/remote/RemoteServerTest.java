@@ -2,12 +2,16 @@ package me.j360.jdk.application.test.remote;
 
 import me.j360.jdk.application.core.common.constant.Constants;
 import me.j360.jdk.application.core.common.remoting.RemotingServerDelegate;
+import me.j360.jdk.application.core.common.remoting.server.RemotingDispatcher;
 import me.j360.jdk.application.core.common.support.Application;
 import me.j360.jdk.application.core.common.support.Config;
+import me.j360.jdk.application.core.common.util.NamedThreadFactory;
 import me.j360.jdk.application.core.common.util.StringUtils;
 import me.j360.jdk.application.remote.*;
 import me.j360.jdk.application.remote.netty.NettyRemotingClient;
 import me.j360.jdk.application.remote.netty.NettyRemotingServer;
+
+import java.util.concurrent.Executors;
 
 /**
  * Created with j360-jdk -> me.j360.jdk.application.test.remote.
@@ -63,6 +67,14 @@ public class RemoteServerTest {
 
         //remote start
         remotingServer.start();
+
+        RemotingProcessor defaultProcessor = new RemotingDispatcher(application);
+        if (defaultProcessor != null) {
+            int processorSize = config.getParameter(Constants.PROCESSOR_THREAD, Constants.DEFAULT_PROCESSOR_THREAD);
+            remotingServer.registerDefaultProcessor(defaultProcessor,
+                    Executors.newFixedThreadPool(processorSize, new NamedThreadFactory(RemoteServerTest.class.getSimpleName())));
+        }
+
     }
 
     static class TaskApplication extends Application{

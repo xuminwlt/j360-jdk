@@ -45,4 +45,5 @@ public abstract class Application {
     public void setCommandBodyWrapper(CommandBodyWrapper commandBodyWrapper) {
         this.commandBodyWrapper = commandBodyWrapper;
     }
+
 }
