@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
  * User: min_xu
  * Date: 2015/11/26
  * Time: 16:53
- * 说明：rpc 服务器端，启动nettyServer作为remoteServer实现
+ * 说明：rpc 服务器端，启动nettyServer作为remoteServer实现，接收来自RemoteClientTest的请求
  */
 public class RemoteServerTest {
     public static void main(String[] args){

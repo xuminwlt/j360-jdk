@@ -26,8 +26,6 @@ public class RemotingDispatcher extends AbstractRemotingProcessor {
 
     public RemotingDispatcher(Application application) {
         super(application);
-        //processors.put(RequestCode.SUBMIT_JOB, new JobSubmitProcessor(application));
-        //processors.put(RequestCode.JOB_FINISHED, new JobFinishedProcessor(application));
     }
 
     @Override
