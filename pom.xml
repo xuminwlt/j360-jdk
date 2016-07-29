@@ -14,6 +14,7 @@
         <module>j360-jdk-common</module>
         <module>j360-jdk-application</module>
         <module>j360-jdk-application-spring</module>
+        <module>j360-jdk-jdk8</module>
     </modules>
 
     <properties>
