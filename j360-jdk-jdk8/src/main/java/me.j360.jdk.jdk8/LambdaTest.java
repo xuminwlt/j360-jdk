@@ -66,7 +66,11 @@ public class LambdaTest {
 
     }
 
+    /**
+     * 3种引用方法 ::的使用，作用上等同于 -> 的对用关系
+     */
     public void functionTest(){
+
         /**
          * 类：实例方法：以类开头，并执行该实例的方法
          */
@@ -85,6 +89,12 @@ public class LambdaTest {
          */
         final KeyEventDispatcher equals = this::equals;
 
+
+        //构造器引用 new出一个对象(使用Bifunction模拟该方法，带上两个参数并返回Person)
+        BiFunction<String,String, Person> ppp = Person::new;
+        Person pppp = ppp.apply("a","c");
+
+
     }
 
     public boolean comp(String x){
@@ -95,7 +105,33 @@ public class LambdaTest {
         return "x"+x;
     }
 
+
+    /**
+     * 变量的作用域：闭包中，被引用的自由变量名，不可以被更改，final
+     */
+    public static void repeat(){
+
+    }
+
+    /**
+     * 默认方法
+     */
+    /**
+     * 接口类的静态方法
+     */
+    /**
+     *
+     */
+
+
     class Person{
+        public Person(){
+
+        }
+        public Person(String a,String b){
+
+        }
+
         public String getName(String x){
 
             return "x:"+x;
