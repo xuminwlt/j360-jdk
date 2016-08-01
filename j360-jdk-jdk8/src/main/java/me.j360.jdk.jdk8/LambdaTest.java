@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * Date: 16/7/30 上午9:58
  * 说明：参数，箭头 —> ，表达式
  */
-public class LambdaTest {
+public class LambdaTest implements DefaultInterface {
 
     public static void main(String args[]) {
         paramTest();
@@ -114,14 +114,19 @@ public class LambdaTest {
     }
 
     /**
-     * 默认方法
+     * 默认方法，写在interface中的方法
      */
+    public void defaultFunctionTest(){
+        getName();
+    }
+
+
     /**
      * 接口类的静态方法
      */
-    /**
-     *
-     */
+    public void staticFunctionTest(){
+        
+    }
 
 
     class Person{
