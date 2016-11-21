@@ -1,5 +1,7 @@
 package me.j360.guava;
 
+import com.google.common.html.HtmlEscapers;
+import com.google.common.xml.XmlEscapers;
 import me.j360.guava.cache.GuavaCache;
 import me.j360.guava.cache.JdbcTemplate;
 
@@ -60,5 +62,11 @@ public class CacheMain {
 
     }
 
+
+    public static void re(){
+        //JdbcTemplate foo = Reflection.newProxy(JdbcTemplate.class, invocationHandler);
+        HtmlEscapers.htmlEscaper();
+        XmlEscapers.xmlContentEscaper();
+    }
 
 }
