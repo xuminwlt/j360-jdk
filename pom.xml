@@ -16,6 +16,7 @@
         <module>j360-jdk-application-spring</module>
         <module>j360-jdk-jdk8</module>
         <module>j360-jdk-guava</module>
+        <module>j360-jdk-nio</module>
     </modules>
 
     <properties>
