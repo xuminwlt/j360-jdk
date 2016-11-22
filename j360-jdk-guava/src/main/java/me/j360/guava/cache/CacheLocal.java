@@ -33,7 +33,6 @@ import java.util.concurrent.TimeUnit;
 public class CacheLocal {
 
     //定义一个普通的Guava Cache，不需要用到load方法
-
     public static <K,V> LoadingCache<K,V> cache() {
         LoadingCache<K, V> cache = (LoadingCache<K, V>) CacheBuilder.newBuilder()
                 .expireAfterAccess(30, TimeUnit.SECONDS)
