@@ -17,6 +17,7 @@
         <module>j360-jdk-jdk8</module>
         <module>j360-jdk-guava</module>
         <module>j360-jdk-nio</module>
+        <module>j360-jdk-jdk7</module>
     </modules>
 
     <properties>

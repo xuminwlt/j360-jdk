@@ -1,9 +1,12 @@
 package me.j360.nio;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 
 /**
  * Package: me.j360.nio
@@ -36,5 +39,15 @@ public class FileBufferTest {
             bytesRead = inChannel.read(buf);
         }
         aFile.close();
+    }
+
+
+    public static void file(){
+        File file = new File("");
+        FileSystem fileSystem = FileSystems.getFileSystem(null);
+        fileSystem.getRootDirectories();
+
+
+        //Files.newByteChannel();
     }
 }
