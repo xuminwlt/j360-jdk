@@ -10,6 +10,7 @@ public class CollectionStream {
 
 
     //收集数据使用流 Collections的静态方法总结 6.4.2表6-1
+    //自定义收集器提高性能
     public static void streamTest(){
 
     }
