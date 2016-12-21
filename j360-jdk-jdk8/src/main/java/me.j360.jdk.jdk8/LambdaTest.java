@@ -1,14 +1,14 @@
 package me.j360.jdk.jdk8;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.RunnableFuture;
 import java.util.function.BiFunction;
-import java.util.stream.Stream;
+import java.util.function.Predicate;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Package: me.j360.jdk.jdk8
@@ -130,6 +130,10 @@ public class LambdaTest implements DefaultInterface {
 
 
     class Person{
+
+        private int id;
+        private int age;
+
         public Person(){
 
         }
@@ -141,5 +145,68 @@ public class LambdaTest implements DefaultInterface {
 
             return "x:"+x;
         }
+
+        public int getId(){
+            return this.getId();
+        }
+        public int getAge(){
+            return this.age;
+        }
+
+
+    }
+
+
+
+
+    public static void listFilterTest(){
+        List<Person> list = new ArrayList<Person>();
+
+
+        //过滤
+        list.stream().sorted(Comparator.comparingInt(Person::getAge)).forEach(p -> System.out.println(p.getAge()));
+
+        //工具类过滤
+        filter(list,(Person p) -> p.getAge() > 10);
+
+        //循环列举
+        list.stream().filter((Person p) -> p.getAge() > 10).sorted((p1,p2) -> p1.getAge() - p2.getAge()).collect(toList()).forEach(
+                p -> System.out.println(p.getAge()));
+
+
+        //按年龄归并
+        Map<Integer,List<Person>> map = list.stream().collect(groupingBy(Person::getAge));
+
+        //列出所有人的年龄
+        List<Integer> list1 = list.stream().map(Person::getAge).collect(toList());
+
+        //计算大于10岁的人的数量
+        long count  = list.stream().map(Person::getAge).filter(age -> age > 10).count();
+
+        //flatMap 把一个流中的每个值都换成另外一个流,然后把所有的流连接起来成为一个流
+
+
+        //查找匹配 match终端操作,用于判断流中是否存在,返回布尔值 find,返回流中的找到的元素,并且是Optional容器
+
+
+        //规约 reduce 0初始值,a,b 每次都拿上一次计算出来的值作为a,b则是流中的下一个元素,如果没有初始值的重载方法,则返回一个Optional容器类
+        int ageSum = list.stream().map(Person::getAge).reduce(0,(a,b) -> a + b);
+
+        Optional<Integer> ageSum2 = list.stream().map(Person::getAge).reduce((a,b) -> a+b);
+
+        //reduce max Integer.max(a,b); min avg等
+        //Stream变种,LongStream,IntStream,一级 mapToLong,maoToInt
+
+        //创建流:数组创建、文件创建、文件生成流、函数生成流:无限流
+
+
+
+
+
+    }
+
+
+    static <T> Collection<T> filter(Collection<T> c, Predicate<T> p){
+        return c;
     }
 }
