@@ -201,6 +201,19 @@ public class LambdaTest implements DefaultInterface {
 
 
 
+        //flatmap,获取某个流下面所有数据,某个数据又包含某些个特定的数据,从而流下面的流进行扁平化处理
+        /**
+         flatmap可以在lamda中返回集合，然后flat为单个元素一个个放入最后的结果集中。
+         比如Person里头有个多个Hobby(List<Hobby>)，那我想获取所有人的所有hobby，则可以：
+         List<Person> persons = ...
+         Set<Hobby> hobbySet = persons.parallelStream().flatMap(p -> p.getHobbyList.stream())
+         .collect(Collectors.toCollection(() -> new TreeSet<Hobby>(
+         (h1,h2) -> h1.getName().compareTo(h2.getName())
+         )))
+         */
+
+
+
 
 
     }
