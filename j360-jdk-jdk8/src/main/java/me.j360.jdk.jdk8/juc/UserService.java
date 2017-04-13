@@ -19,4 +19,10 @@ public class UserService {
         }
         return 1;
     }
+
+
+
+    public String getUserName(Long uid) {
+        return String.valueOf(Math.random());
+    }
 }

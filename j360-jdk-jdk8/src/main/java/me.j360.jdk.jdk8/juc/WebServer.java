@@ -1,6 +1,9 @@
 package me.j360.jdk.jdk8.juc;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 /**
  * Package: me.j360.jdk.jdk8.juc
@@ -25,9 +28,11 @@ public class WebServer {
         server.setSnsService(new SnsService());
         server.setUserService(new UserService());
 
-        int score = server.getScore(1L);
+        //int score = server.getScore(1L);
+        //System.out.println("score:"+score);
 
-        System.out.println("score:"+score);
+        List<String> list = server.getUserNames(new Long[]{1L,2L,3L});
+        list.forEach(a -> System.out.println(a));
 
         server.pool.shutdownNow();
         server.pool.awaitTermination(1,TimeUnit.SECONDS);
@@ -38,6 +43,45 @@ public class WebServer {
         server.pool3.shutdownNow();
         server.pool3.awaitTermination(1,TimeUnit.SECONDS);
     }
+
+
+
+    private List<String> getUserNames(Long[] uids) {
+
+        List<CompletableFuture<String>> cfs = new ArrayList<CompletableFuture<String>>();
+        int i = 0;
+        for(Long uid:uids) {
+            cfs.add( CompletableFuture.supplyAsync(() -> userService.getUserName(uid)).exceptionally(throwable -> {
+                System.out.println("Unrecoverable error ");
+                return null;
+            }));
+            i++;
+        }
+
+        CompletableFuture<List<String>> cfss = sequence(cfs);
+
+        //转化成
+
+        try {
+            List<String> list = cfss.get();return list;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static <T> CompletableFuture<List<T>> sequence(List<CompletableFuture<T>> futures) {
+        CompletableFuture<Void> allDoneFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]));
+        return allDoneFuture.thenApply(v -> futures.stream().map(CompletableFuture::join).collect(Collectors.<T>toList()));
+    }
+
+    /*public static <T> CompletableFuture<Stream<T>> sequence(Stream<CompletableFuture<T>> futures) {
+        List<CompletableFuture<T>> futureList = futures.filter(f -> f != null).collect(Collectors.toList());
+        return sequence(futureList);
+    }*/
 
 
     private int getAnotherAge(Integer future,Long uid) {
