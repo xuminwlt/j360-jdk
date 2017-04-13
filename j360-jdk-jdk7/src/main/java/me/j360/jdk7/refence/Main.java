@@ -3,6 +3,8 @@ package me.j360.jdk7.refence;
 public class Main {
 
 
+	//WeakReferenceCar关联的对象Car被回收掉了，注意是弱引用关联的对象car被回收，而不是弱引用本身wrc被回收
+
 	public static void main(String[] args) {
 		ThreadLocal th = new ThreadLocal();//自己模拟的ThreadLocal 里面持有一个ThreadLocalMap对象
 		//唯一不同的是set方法内部是put进新的值，而Java的ThreadLocal是"set" 老值会被新值替换。
