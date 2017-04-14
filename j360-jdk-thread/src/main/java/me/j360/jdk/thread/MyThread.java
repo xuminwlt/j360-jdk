@@ -9,9 +9,15 @@ package me.j360.jdk.thread;
  */
 public class MyThread extends Thread{
 
+
+    public static final ThreadLocal<String> threadLocal = new ThreadLocal<>();
+
     @Override
     public void run(){
-        System.out.println("MyThread.run()");
+
+        threadLocal.set("test");
+
+        System.out.println(threadLocal.get() + " MyThread.run()");
     }
 
 }
