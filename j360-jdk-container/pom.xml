@@ -12,4 +12,12 @@
     <artifactId>j360-jdk-container</artifactId>
 
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+    </dependencies>
 </project>
